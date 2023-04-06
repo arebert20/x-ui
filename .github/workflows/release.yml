@@ -34,8 +34,8 @@ jobs:
       - name: build linux arm version
         run: |
           sudo apt-get update
-          sudo apt install gcc-arm-linux-gnueabihf -y
-          CGO_ENABLED=1 GOOS=linux GOARCH=arm CC=gcc-arm-linux-gnueabihf go build -o xui-release -v main.go
+          sudo apt install gcc-aarch64-linux-gnu
+          CGO_ENABLED=1 GOOS=linux GOARCH=arm CC=aarch64-linux-gnu-gcc go build -o xui-release -v main.go
           mkdir x-ui
           cp xui-release x-ui/xui-release
           cp x-ui.service x-ui/x-ui.service
